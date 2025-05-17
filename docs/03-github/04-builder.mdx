@@ -541,9 +541,11 @@ _**required:** `false`_ _**default:** `false`_
 
 #### enableGpu
 
-Omits passing the `-nographics` parameter when launching Unity to perform the build. Useful when
+On MacOS, omits passing the `-nographics` parameter when launching Unity to perform the build. Useful when
 using runners that have GPU available, and your build process utilizes Unity's graphics API during
-build. MacOS only.
+build.
+
+On Windows, additionally downloads and installs LLVMPipe OpenGL driver from https://github.com/mmozeiko/build-mesa and runs the build with `-force-opengl`.
 
 _**required:** `false`_ _**default:** `false`_
 
